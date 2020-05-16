@@ -1,0 +1,32 @@
+.type-box{
+	padding: 10px;
+	margin-top: 10px;
+}
+.type-text{
+	display: inline-block;
+	width: 70%;
+	text-align: center;
+}
+
+.rm-icon{
+	position: relative !important;
+	right: 5px !important;
+}
+.type-btn{
+	margin-bottom: 15px !important;
+	padding: 15px !important;
+}
+.edit-body{
+	width: 80%;
+	margin: 0 auto;
+}
+.edit-body .mar{
+	margin-left: 10px;
+}
+.icon-edit :hover{
+	color: #000;
+	cursor: pointer;
+}
+.col-group{
+	margin-top: 18px;	
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="baseDao"  class="com.prosay.db.BaseDao">
+	</bean>
+	<bean id="user" scope="single" class="com.prosay.core.util.User">
+		<property name="userName" value="Jame"/>
+		<property name="password" value="18"/>
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+</beans>

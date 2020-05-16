@@ -1,0 +1,39 @@
+package com.prosay.core;
+
+import java.util.Map;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+import com.prosay.core.util.ClassScanner;
+import com.prosay.core.util.Contants;
+import com.prosay.db.DbUtil;
+/**
+ * 
+* @ClassName: ApplicationListener 
+* @Description: 监听应用的上下文
+* @author Jame 
+* @date 2017年12月15日 下午10:12:22 
+*
+ */
+public class ApplicationListener implements ServletContextListener {
+
+	@Override
+	public void contextDestroyed(ServletContextEvent servletContextEvent) {
+		// 应用程序被卸载的时候 释放数据库连接池
+		DbUtil.release();
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent servletContextEvent) {
+		// 应用程序被加载的时候（应用启动的时候）
+		String basePackage = (String)servletContextEvent.getServletContext().getInitParameter(Contants.PACKAGE_PARAM_NAME);
+		//通过基础包路径 扫描下面的所有类
+		Map<String,Class<?>> result = ClassScanner.scannerClass(basePackage);
+		//初始化Bean容器
+		BeanContext b = new BeanContext(result);
+		//将Bean容存放到整个上下文的中
+		servletContextEvent.getServletContext().setAttribute(Contants.CONTEXT_NAME, b);
+	}
+
+}

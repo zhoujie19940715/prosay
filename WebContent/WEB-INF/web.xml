@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <context-param>
+  	<param-name>basePackage</param-name>
+  	<param-value>com/prosay</param-value>
+  </context-param>
+  <!-- 框架Bean容器初始化监听器 -->
+  <listener>
+		<listener-class>com.prosay.core.ApplicationListener</listener-class>
+  </listener>
+  <!-- mvc框架的核心控制器 -->
+  <servlet>
+  	<servlet-name>mvc</servlet-name>
+  	<servlet-class>com.prosay.core.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>mvc</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <display-name>prosay</display-name>
+  <welcome-file-list>
+    <welcome-file>/front/index.do</welcome-file>
+  </welcome-file-list>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/404.jsp</location>
+  </error-page>
+</web-app>

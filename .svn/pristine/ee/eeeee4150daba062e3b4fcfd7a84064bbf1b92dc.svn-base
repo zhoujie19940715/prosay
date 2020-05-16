@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    <description>新闻项目的自定义标签库</description>
+    <display-name>news core</display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>news</short-name>
+    <!-- 标签库的定位符 必须唯一 -->
+    <uri>http://www.prosayedu.com/prosay/core</uri>
+    <tag>
+    	<!-- 标签的名字 -->
+    	<name>hello</name>
+    	<!-- 指定标签的实现类 -->
+    	<tag-class>com.prosay.tag.HelloTag</tag-class>
+    	<!-- 是否存在标签体 -->
+    	<body-content>empty</body-content>
+    	<!-- 标签具备属性的话 使用 attribute标签 -->
+    	<attribute>
+    		<description>用户昵称</description>
+    		<!-- 属性名 -->
+    		<name>name</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    </tag>
+    <tag>
+    	<name>for</name>
+    	<tag-class>com.prosay.tag.ForEachTag</tag-class>
+    	<!-- 指定会有可执行的标签提 -->
+    	<body-content>scriptless</body-content>
+    	<attribute>
+    		<description>集合</description>
+    		<!-- 属性名 -->
+    		<name>items</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<description>循环的临时标识符</description>
+    		<!-- 属性名 -->
+    		<name>var</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+    <tag>
+    	<name>page</name>
+    	<tag-class>com.prosay.tag.PageTag</tag-class>
+    	<!-- 指定会有可执行的标签提 -->
+    	<body-content>empty</body-content>
+    	<attribute>
+    		<!-- 属性名 -->
+    		<name>currentPage</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<!-- 属性名 -->
+    		<name>total</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<!-- 属性名 -->
+    		<name>pageSize</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>true</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<!-- 属性名 -->
+    		<name>formId</name>
+    		<!-- 属性是否必须传递 -->
+    		<required>false</required>
+    		<!-- 属性是否可以接收运行时的值 -->
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    </tag>
+</taglib>

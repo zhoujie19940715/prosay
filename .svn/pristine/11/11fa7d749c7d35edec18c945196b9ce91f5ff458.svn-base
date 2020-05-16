@@ -1,0 +1,57 @@
+.description-wrapper{
+	padding-left:30px;
+}
+mark{
+	color: red;
+	margin-left: -6px;
+}
+.d-wrapper{
+	display: flex;
+	width: 95%;
+}
+.d-img{
+	flex: 0;
+	max-width:300px;
+	max-height:300px;
+}
+.d-wrapper>.d-content{
+	flex: 1;
+	height:190px;
+	padding: 10px 20px 0;
+	vertical-align: top;
+}
+.d-name{
+	float:70px;
+	color:rgb(7,17,27);
+	font-size: 18px;
+}
+.d-new-price{
+	font-weight:700;
+	color:red;
+	font-size:20px;
+}
+.d-old-price{
+	text-decoration:line-through;
+	color:#666;
+}
+.d-storage{
+	padding-left: 30px;
+	color: blue;
+}
+.d-lookamount{
+	position: relative;
+	color: #666;
+	bottom: 10px;
+}
+.d-lookamount,.d-btn{
+}
+.d-btn{
+	position: relative;
+	left: 40%;
+	padding: 6px 10px;
+	background-color: red;
+}
+.description-wrapper li a{
+	color: yellowgreen;
+}
+
